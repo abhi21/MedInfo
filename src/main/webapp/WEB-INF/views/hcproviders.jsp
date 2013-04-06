@@ -52,7 +52,7 @@
                     </form:select>
                 </div>
                 <div class="field vertical">
-                    <input type="submit" value="Create new HCProvider">
+                    <input id="submit" type="submit" value="Create new HCProvider">
                 </div>
             </div>
 
