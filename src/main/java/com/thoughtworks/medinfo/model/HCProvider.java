@@ -12,8 +12,8 @@ import java.io.Serializable;
 import java.math.BigDecimal;
 
 @Entity
-@Table(name = "things")
-public class Thing implements Serializable {
+@Table(name = "hcproviders")
+public class HCProvider implements Serializable {
 
 	private static final long serialVersionUID = -4060739788760795254L;
 

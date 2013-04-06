@@ -15,6 +15,6 @@
 		<![endif]-->
 		<h1><div class="heading">Welcome to MedInfo !</div></h1>
 		<h2>This is your Spring MVC skeleton with Gradle build, Hibernate persistance and Selenium functional testing</h2>
-		<p>Go to <a href="<c:url value='/thing' />">Thing</a> page.</p>
+		<p>Go to <a href="<c:url value='/hcproviders' />">Health Care Providers</a> page.</p>
 	</body>
 </html>

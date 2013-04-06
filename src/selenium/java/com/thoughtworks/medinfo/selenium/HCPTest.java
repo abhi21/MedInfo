@@ -12,7 +12,7 @@ import java.sql.SQLException;
 
 import static org.junit.Assert.assertEquals;
 
-public class ThingTest {
+public class HCPTest {
 	
 	static WebDriver driver;
 	
@@ -29,41 +29,41 @@ public class ThingTest {
 	@Before
 	public void setup() throws SQLException {
 		Database.clean();
-        driver.get("http://localhost:8080/MedInfo/thing");
+        driver.get("http://localhost:8080/MedInfo/hcProviders");
 	}
 	
 	@Test
-	public void addingOneThing() {
+	public void addingOneHCP() {
 
-		addThing("thing1");
+		addHCP("hcp1");
 		assertEquals(1, driver.findElements(By.xpath("//table//tbody//tr")).size());
 	}
 
 	@Test
-	public void addingTwoThings() {
-		addThing("thing1");
-		addThing("thing2");
+	public void addingTwoHCPs() {
+		addHCP("hcp1");
+		addHCP("hcp2");
 		assertEquals(2, driver.findElements(By.xpath("//table//tbody//tr")).size());
 	}
 	
 	@Test
-	public void updatingTwoThings() {
-		addThing("thing1");
-		addThing("thing2");
+	public void updatingTwoHCPs() {
+		addHCP("hcp1");
+		addHCP("hcp2");
 		driver.findElement(By.xpath("//tbody//tr[1]//input[@type='checkbox']")).click();
 		driver.findElement(By.xpath("//tbody//tr[2]//input[@type='checkbox']")).click();
 		driver.findElement(By.xpath("//tbody//tr[1]//input[contains(@name, '.name')]")).sendKeys("1");
 		driver.findElement(By.xpath("//tbody//tr[2]//input[contains(@name, '.name')]")).sendKeys("2");
-		driver.findElement(By.xpath("id('thingGrid')//input[@type='submit']")).click();
-		assertEquals("thing11", driver.findElement(By.xpath("//tbody//tr[1]//input[contains(@name, '.name')]")).getAttribute("value"));
-		assertEquals("thing22", driver.findElement(By.xpath("//tbody//tr[2]//input[contains(@name, '.name')]")).getAttribute("value"));
+		driver.findElement(By.xpath("id('hcpGrid')//input[@type='submit']")).click();
+		assertEquals("hcp11", driver.findElement(By.xpath("//tbody//tr[1]//input[contains(@name, '.name')]")).getAttribute("value"));
+		assertEquals("hcp22", driver.findElement(By.xpath("//tbody//tr[2]//input[contains(@name, '.name')]")).getAttribute("value"));
 	}
 	
-	private void addThing(String name) {
+	private void addHCP(String name) {
 		driver.findElement(By.name("name")).sendKeys(name);
 		driver.findElement(By.name("price")).sendKeys("13.99");
 		driver.findElement(By.name("description")).sendKeys(name + " is awesome");
-		driver.findElement(By.id("thingCommand")).findElement(By.xpath("//input[@type='submit']")).click();
+		driver.findElement(By.id("hcpCommand")).findElement(By.xpath("//input[@type='submit']")).click();
 	}
 
 }

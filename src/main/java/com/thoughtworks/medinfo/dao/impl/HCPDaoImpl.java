@@ -1,7 +1,7 @@
 package com.thoughtworks.medinfo.dao.impl;
 
-import com.thoughtworks.medinfo.dao.ThingDao;
-import com.thoughtworks.medinfo.model.Thing;
+import com.thoughtworks.medinfo.dao.HCPDao;
+import com.thoughtworks.medinfo.model.HCProvider;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -9,34 +9,34 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public class ThingDaoImpl implements ThingDao {
+public class HCPDaoImpl implements HCPDao {
 
 	@Autowired
 	private SessionFactory sessionFactory;
 
-	public Thing get(Long id) {
-		return (Thing) sessionFactory.getCurrentSession()
+	public HCProvider get(Long id) {
+		return (HCProvider) sessionFactory.getCurrentSession()
 			.createQuery(
-					"FROM Thing u " +
+					"FROM HCProvider u " +
 					"WHERE u.id = :id " +
 					"ORDER BY u.id")
 			.setLong("id", id).uniqueResult();
 	}
 
-	public void delete(Thing thing) {
-		sessionFactory.getCurrentSession().delete(thing);
+	public void delete(HCProvider HCProvider) {
+		sessionFactory.getCurrentSession().delete(HCProvider);
 	}
 
 	@SuppressWarnings("unchecked")
-	public List<Thing> findAll() {
+	public List<HCProvider> findAll() {
 		return sessionFactory.getCurrentSession().createQuery(
-				"FROM Thing " +
+				"FROM HCProvider " +
 				"ORDER BY id")
 			.list();
 	}
 
-	public void save(Thing thing) {
-		sessionFactory.getCurrentSession().merge(thing);
+	public void save(HCProvider HCProvider) {
+		sessionFactory.getCurrentSession().merge(HCProvider);
 
 	}
 	

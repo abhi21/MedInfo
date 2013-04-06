@@ -1,6 +1,6 @@
 package com.thoughtworks.medinfo.web;
 
-import com.thoughtworks.medinfo.service.ThingService;
+import com.thoughtworks.medinfo.service.HCPService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -12,36 +12,36 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import javax.validation.Valid;
 
 @Controller
-@RequestMapping(ThingController.URL)
-public class ThingController {
+@RequestMapping(HCPController.URL)
+public class HCPController {
 
-	static final String URL = "/thing";
+	static final String URL = "/hcproviders";
 	
 	@Autowired
-    ThingService thingService;
+    HCPService hcpService;
 
 	@RequestMapping(method = RequestMethod.GET)
-	public void get(Model model, @ModelAttribute ThingCommand thingCommand) {
-		model.addAttribute("thingGrid", thingService.findAll());
+	public void get(Model model, @ModelAttribute HCProviderCommand hcpCommand) {
+		model.addAttribute("hcpGrid", hcpService.findAll());
 	}
 	
 	@RequestMapping(method = RequestMethod.POST)
-	public String post(Model model, @Valid ThingCommand thingCommand, BindingResult result) {
+	public String post(Model model, @Valid HCProviderCommand hcpCommand, BindingResult result) {
 		if (result.hasErrors()) {
-			model.addAttribute("thingGrid", thingService.findAll());
+			model.addAttribute("hcpGrid", hcpService.findAll());
 			return URL;
 		}
-		thingService.save(thingCommand);
+		hcpService.save(hcpCommand);
 		return "redirect:" + URL;
 	}
 	
 	@RequestMapping(method = RequestMethod.POST, params="_method=put")
-	public String put(Model model, @Valid ThingGrid thingGrid, BindingResult result) {
+	public String put(Model model, @Valid HCPGrid hcpGrid, BindingResult result) {
 		if (result.hasErrors()) {
-			thingService.updateWithAll(thingGrid);
+			hcpService.updateWithAll(hcpGrid);
 			return URL;
 		}
-		thingService.saveAll(thingGrid);
+		hcpService.saveAll(hcpGrid);
 		return "redirect:" + URL;
 	}
 	

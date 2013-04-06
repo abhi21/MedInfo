@@ -39,9 +39,9 @@ public class HomeTest {
     }
 
     @Test
-    public void  shouldTakeUserToThingPageFromHomeScreen(){
-        driver.findElement(By.linkText("Thing")).click();
-        assertTrue(driver.getCurrentUrl().contains("http://localhost:8080/MedInfo/thing"));
+    public void shouldTakeUserToHCPPageFromHomeScreen(){
+        driver.findElement(By.linkText("HCProvider")).click();
+        assertTrue(driver.getCurrentUrl().contains("http://localhost:8080/MedInfo/hcproviders"));
     }
 
 }

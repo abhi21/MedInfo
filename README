@@ -16,13 +16,13 @@ Requirements:
 2. Start postgres server,
 - create database testmedinfo :see test-persistance-config.xml, no need to create tables inside
 - create database medinfo :see persistance-config.xml
-        - create table thing {CREATE TABLE things
+        - create table HCProvider {CREATE TABLE hcproviders
                               (
                                 id bigint NOT NULL,
                                 description character varying(255) NOT NULL,
                                 name character varying(255) NOT NULL,
                                 price numeric(19,2) NOT NULL,
-                                CONSTRAINT things_pkey PRIMARY KEY (id)
+                                CONSTRAINT hcproviders_pkey PRIMARY KEY (id)
                               )}
 ]
 
