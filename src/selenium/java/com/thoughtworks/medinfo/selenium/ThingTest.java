@@ -29,7 +29,7 @@ public class ThingTest {
 	@Before
 	public void setup() throws SQLException {
 		Database.clean();
-        driver.get("http://localhost:8080/spring-mvc-hibernate-skeleton/thing");
+        driver.get("http://localhost:8080/MedInfo/thing");
 	}
 	
 	@Test

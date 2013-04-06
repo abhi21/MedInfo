@@ -27,7 +27,7 @@ public final class Database {
 	}
 
 	private static Connection createConnection() throws SQLException {
-		String url = "jdbc:postgresql://localhost:5432/hellotwu";
+		String url = "jdbc:postgresql://localhost:5432/medinfo";
 		String thing = "postgres";
 		String password = "postgres";
 		try {

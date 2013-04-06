@@ -29,19 +29,19 @@ public class HomeTest {
     @Before
     public void setup() throws SQLException {
         Database.clean();
-        driver.get("http://localhost:8080/spring-mvc-hibernate-skeleton/");
+        driver.get("http://localhost:8080/MedInfo/");
     }
 
     @Test
     public void shouldShowWelcomeScreenAtStartup() {
         WebElement bodyTag = driver.findElement(By.className("heading"));
-        assertTrue(bodyTag.getText().contains("Welcome to ThoughtWorks University !"));
+        assertTrue(bodyTag.getText().contains("Welcome to MedInfo !"));
     }
 
     @Test
     public void  shouldTakeUserToThingPageFromHomeScreen(){
         driver.findElement(By.linkText("Thing")).click();
-        assertTrue(driver.getCurrentUrl().contains("http://localhost:8080/spring-mvc-hibernate-skeleton/thing"));
+        assertTrue(driver.getCurrentUrl().contains("http://localhost:8080/MedInfo/thing"));
     }
 
 }
