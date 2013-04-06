@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite errors="0" failures="0" hostname="localhost" name="com.thoughtworks.twu.web.ThingGridTest" tests="3" time="0.037" timestamp="2013-03-03T10:16:10">
-  <properties />
-  <testcase classname="com.thoughtworks.twu.web.ThingGridTest" name="invalid_price_should_have_violations" time="0.013" />
-  <testcase classname="com.thoughtworks.twu.web.ThingGridTest" name="should_accept_valid_price" time="0.011" />
-  <testcase classname="com.thoughtworks.twu.web.ThingGridTest" name="two_valid_things_should_not_have_violations" time="0.008" />
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>
