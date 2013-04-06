@@ -26,7 +26,7 @@ public class HomeController {
         this.hcpService = hcpService;
     }
 
-    @RequestMapping(value = "/", method = RequestMethod.GET)
+     @RequestMapping(value="/", method = RequestMethod.GET)
     public String get(Model model) {
         model.addAttribute("hcpGrid", hcpService.findAll());
         return "home";
@@ -40,6 +40,16 @@ public class HomeController {
         model.addAttribute("searchStat", "Number of Records for " + pincode);
         model.addAttribute("searchCount", hcProviders.size());
         return "home";
+    }
+
+    @RequestMapping(value="/about", method = RequestMethod.GET)
+    public String about() {
+        return "about";
+    }
+
+    @RequestMapping(value="/contact", method = RequestMethod.GET)
+    public String contact() {
+        return "contact";
     }
 }
 
