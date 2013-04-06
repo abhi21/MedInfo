@@ -16,30 +16,28 @@ import javax.validation.Valid;
 @RequestMapping(HCPController.URL)
 public class HCPController {
 
-	static final String URL = "/hcproviders";
-	
-	@Autowired
+    static final String URL = "/hcproviders";
+    @Autowired
     HCPService hcpService;
-
     HCPRole hcpRole;
 
-	@RequestMapping(method = RequestMethod.GET)
-	public void get(Model model, @ModelAttribute HCProviderCommand hcpCommand) {
-		model.addAttribute("hcpGrid", hcpService.findAll());
-	}
-	
-	@RequestMapping(method = RequestMethod.POST)
-	public String post(Model model, @Valid HCProviderCommand hcpCommand, BindingResult result) {
-		if (result.hasErrors()) {
-			model.addAttribute("hcpGrid", hcpService.findAll());
-			model.addAttribute("hcpRoles", hcpRole.getRoles());
-			return URL;
-		}
-		hcpService.save(hcpCommand);
-		return "redirect:" + URL;
-	}
+    @RequestMapping(method = RequestMethod.GET)
+    public void get(Model model, @ModelAttribute HCProviderCommand hcpCommand) {
+        model.addAttribute("hcpGrid", hcpService.findAll());
+    }
 
-    @RequestMapping(method = RequestMethod.POST, params="update=Update all enabled items")
+    @RequestMapping(method = RequestMethod.POST)
+    public String post(Model model, @Valid HCProviderCommand hcpCommand, BindingResult result) {
+        if (result.hasErrors()) {
+            model.addAttribute("hcpGrid", hcpService.findAll());
+            model.addAttribute("hcpRoles", hcpRole.getRoles());
+            return URL;
+        }
+        hcpService.save(hcpCommand);
+        return "redirect:" + URL;
+    }
+
+    @RequestMapping(method = RequestMethod.POST, params = "update=Update all enabled items")
     public String updateItem(Model model, @Valid HCPGrid hcpGrid, BindingResult result) {
         if (result.hasErrors()) {
             hcpService.viewAll(hcpGrid);
@@ -49,7 +47,7 @@ public class HCPController {
         return "redirect:" + URL;
     }
 
-    @RequestMapping(method = RequestMethod.POST, params="delete=Delete all enabled items")
+    @RequestMapping(method = RequestMethod.POST, params = "delete=Delete all enabled items")
     public String deleteItem(Model model, @Valid HCPGrid hcpGrid, BindingResult result) {
         if (result.hasErrors()) {
             hcpService.viewAll(hcpGrid);

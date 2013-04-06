@@ -20,7 +20,7 @@ public interface HCPService {
 
     void viewAll(HCPGrid HCPGrid);
 
-    List<HCProvider> findByPincode(String pincode);
+    List<HCProvider> findByPincode(String pincode, int limit);
 
     void deleteAll(HCPGrid hcpGrid);
 }

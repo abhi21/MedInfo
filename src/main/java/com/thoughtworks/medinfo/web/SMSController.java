@@ -35,7 +35,7 @@ public class SMSController {
     @ResponseBody
     public void reply(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) throws IOException {
         httpServletResponse.setContentType("text/plain");
-        List<HCProvider> hcProviders = hcpService.findByPincode(smsRequestProcessor.getPincode(httpServletRequest));
+        List<HCProvider> hcProviders = hcpService.findByPincode(smsRequestProcessor.getPincode(httpServletRequest), 2);
         String toSend = pretify(hcProviders);
         ServletOutputStream outputStream = httpServletResponse.getOutputStream();
         outputStream.write(toSend.getBytes());

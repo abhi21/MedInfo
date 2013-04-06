@@ -58,15 +58,15 @@ public class HCPServiceImpl implements HCPService {
     }
 
     @Transactional(readOnly = true)
-    public List<HCProvider> findByPincode(String pincode) {
+    public List<HCProvider> findByPincode(String pincode, int limitCount) {
         List<HCProvider> hcProviders = hcpDao.findByPincode(pincode);
-        return limit(hcProviders, 2);
+        return limit(hcProviders, limitCount);
     }
 
-    private List<HCProvider> limit(List<HCProvider> hcProviders, int size) {
+    private List<HCProvider> limit(List<HCProvider> hcProviders, int limitCount) {
         int length = hcProviders.size();
         if (length == 0 || hcProviders == null) return new ArrayList<HCProvider>();
-        int limit = size > length ? length : size;
+        int limit = limitCount > length ? length : limitCount;
         return hcProviders.subList(0, limit);
     }
 
