@@ -18,12 +18,12 @@ public class HCPServiceImpl implements HCPService {
     @Autowired
     HCPDao hcpDao;
 
-	@Transactional(readOnly = true)
-	public void viewAll(HCPGrid HCPGrid) {
-		HCPGrid allHCPs = findAll();
-		allHCPs.getHcpMap().putAll(HCPGrid.getHcpMap());
-		HCPGrid.setHcpMap(allHCPs.getHcpMap());
-	}
+    @Transactional(readOnly = true)
+    public void viewAll(HCPGrid HCPGrid) {
+        HCPGrid allHCPs = findAll();
+        allHCPs.getHcpMap().putAll(HCPGrid.getHcpMap());
+        HCPGrid.setHcpMap(allHCPs.getHcpMap());
+    }
 
     @Transactional
     public void deleteAll(HCPGrid hcpGrid) {
@@ -55,13 +55,6 @@ public class HCPServiceImpl implements HCPService {
     public void saveAll(HCPGrid HCPGrid) {
         for (HCProvider HCProvider : HCPGrid.getHCP())
             hcpDao.save(HCProvider);
-    }
-
-    @Transactional(readOnly = true)
-    public void updateWithAll(HCPGrid HCPGrid) {
-        HCPGrid allHCPs = findAll();
-        allHCPs.getHcpMap().putAll(HCPGrid.getHcpMap());
-        HCPGrid.setHcpMap(allHCPs.getHcpMap());
     }
 
     @Transactional(readOnly = true)

@@ -42,7 +42,7 @@ public class HCPDaoImpl implements HCPDao {
 
     public List<HCProvider> findByPincode(String pincode) {
         return (List<HCProvider>) sessionFactory.getCurrentSession().createQuery("from HCProvider u " +
-                "WHERE u.pincode = :pincode");
+                "WHERE u.pincode = :pincode").setString("pincode", pincode).list();
     }
 
 }
