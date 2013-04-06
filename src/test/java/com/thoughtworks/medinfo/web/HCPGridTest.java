@@ -1,13 +1,13 @@
 package com.thoughtworks.medinfo.web;
 
-import com.thoughtworks.medinfo.model.*;
+import com.thoughtworks.medinfo.model.HCPRole;
+import com.thoughtworks.medinfo.model.HCProvider;
 import junit.framework.Assert;
 import org.junit.Test;
 
 import javax.validation.ConstraintViolation;
 import javax.validation.Validation;
 import javax.validation.Validator;
-import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
@@ -17,19 +17,29 @@ public class HCPGridTest {
 	@Test
 	public void two_valid_HCPs_should_not_have_violations() {
 
-		List<HCProvider> HCProviders = new ArrayList<HCProvider>();
+		List<HCProvider> hcproviders = new ArrayList<HCProvider>();
 
-		HCProviders.add(new HCProvider());
-		HCProviders.get(0).setName("name1");
-		HCProviders.get(0).setPrice(BigDecimal.valueOf(13.99));
-		HCProviders.get(0).setDescription("description1");
+        HCProvider hcProvider = new HCProvider();
+		hcProvider.setName("name1");
+		hcProvider.setPhone("phone");
+		hcProvider.setState("state1");
+		hcProvider.setCity("city1");
+		hcProvider.setStreet("street1");
+		hcProvider.setRole(HCPRole.ANGANWADI_WORKER);
+		hcProvider.setPincode("560012");
+        hcproviders.add(hcProvider);
 
-		HCProviders.add(new HCProvider());
-		HCProviders.get(1).setName("name2");
-		HCProviders.get(1).setPrice(BigDecimal.valueOf(14.99));
-		HCProviders.get(1).setDescription("description2");
+        HCProvider hcProvider2 = new HCProvider();
+        hcProvider2.setName("name2");
+        hcProvider2.setPhone("phone2");
+        hcProvider2.setState("state2");
+        hcProvider2.setCity("city2");
+        hcProvider2.setStreet("street2");
+        hcProvider2.setRole(HCPRole.ANGANWADI_WORKER);
+        hcProvider2.setPincode("560011");
+        hcproviders.add(hcProvider2);
 
-		HCPGrid HCPGrid = new HCPGrid(HCProviders);
+		HCPGrid HCPGrid = new HCPGrid(hcproviders);
 		
 		Validator validator = Validation.buildDefaultValidatorFactory().getValidator();
 		Set<ConstraintViolation<HCPGrid>> violations = validator.validate(HCPGrid);
@@ -37,42 +47,6 @@ public class HCPGridTest {
 	
 	}
 
-    @Test
-    public void should_accept_valid_price() {
 
-        List<HCProvider> HCProviders = new ArrayList<HCProvider>();
-
-        HCProviders.add(new HCProvider());
-        HCProviders.get(0).setName("name1");
-        HCProviders.get(0).setPrice(BigDecimal.valueOf(13.99));
-        HCProviders.get(0).setDescription("description1");
-
-        HCPGrid hcpGrid = new HCPGrid(HCProviders);
-
-        Validator validator = Validation.buildDefaultValidatorFactory().getValidator();
-        Set<ConstraintViolation<HCPGrid>> violations = validator.validate(hcpGrid);
-        Assert.assertTrue(violations.isEmpty());
-    }
-
-	@Test
-	public void invalid_price_should_have_violations() {
-
-		List<HCProvider> HCProviders = new ArrayList<HCProvider>();
-
-		HCProviders.add(new HCProvider());
-		HCProviders.get(0).setName("name1");
-		HCProviders.get(0).setPrice(BigDecimal.valueOf(348324689));
-		HCProviders.get(0).setDescription("description1");
-
-		HCPGrid hcpGrid = new HCPGrid(HCProviders);
-		
-		Validator validator = Validation.buildDefaultValidatorFactory().getValidator();
-		Set<ConstraintViolation<HCPGrid>> violations = validator.validate(hcpGrid);
-		Assert.assertFalse(violations.isEmpty());
-		for (ConstraintViolation<HCPGrid> violation : violations) {
-			Assert.assertEquals("must be less than or equal to 99999", violation.getMessage());
-		}
-	
-	}
 
 }

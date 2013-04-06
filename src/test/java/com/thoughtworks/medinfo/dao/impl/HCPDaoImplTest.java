@@ -1,13 +1,14 @@
 package com.thoughtworks.medinfo.dao.impl;
 
-import com.thoughtworks.medinfo.model.*;
-import junit.framework.Assert;
+import com.thoughtworks.medinfo.model.HCPRole;
+import com.thoughtworks.medinfo.model.HCProvider;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.math.BigDecimal;
 import java.util.List;
+
+import static junit.framework.Assert.assertEquals;
 
 @Transactional
 public class HCPDaoImplTest extends DaoTest {
@@ -18,14 +19,24 @@ public class HCPDaoImplTest extends DaoTest {
 	@Test
 	public void all_fields_are_persisted() {
 		HCProvider HCProvider = new HCProvider();
-		HCProvider.setName("Name1");
-		HCProvider.setPrice(BigDecimal.valueOf(13.99));
-		HCProvider.setDescription("this HCProvider is awesome");
-		hcpDaoImpl.save(HCProvider);
+		HCProvider.setName("name1");
+        HCProvider.setPhone("phone");
+        HCProvider.setState("state1");
+        HCProvider.setCity("city1");
+        HCProvider.setStreet("street1");
+        HCProvider.setRole(HCPRole.ANGANWADI_WORKER);
+        HCProvider.setPincode("560012");
+
+        hcpDaoImpl.save(HCProvider);
 		List<HCProvider> HCProviders = hcpDaoImpl.findAll();
-		Assert.assertEquals("Name1", HCProviders.get(0).getName());
-		Assert.assertEquals(BigDecimal.valueOf(13.99), HCProviders.get(0).getPrice());
-		Assert.assertEquals("this HCProvider is awesome", HCProviders.get(0).getDescription());
+		assertEquals("name1",  HCProviders.get(0).getName());
+		assertEquals("phone",  HCProviders.get(0).getPhone());
+		assertEquals("state1", HCProviders.get(0).getState());
+		assertEquals("city1",  HCProviders.get(0).getCity());
+		assertEquals("street1",HCProviders.get(0).getStreet());
+		assertEquals(HCPRole.ANGANWADI_WORKER,  HCProviders.get(0).getRole());
+		assertEquals("560012", HCProviders.get(0).getPincode());
+
 		hcpDaoImpl.delete(HCProvider);
 	}
 	

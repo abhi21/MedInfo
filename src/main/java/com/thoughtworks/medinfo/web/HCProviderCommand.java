@@ -13,16 +13,25 @@ public class HCProviderCommand extends HCProvider {
 	public HCProviderCommand(HCProvider HCProvider) {
 		setId(HCProvider.getId());
 		setName(HCProvider.getName());
-		setPrice(HCProvider.getPrice());
-		setDescription(HCProvider.getDescription());
+        setPhone(HCProvider.getPhone());
+        setCity(HCProvider.getCity());
+        setPincode(HCProvider.getPincode());
+        setRole(HCProvider.getRole());
+        setStreet(HCProvider.getStreet());
+        setState(HCProvider.getState());
 	}
 
 	public HCProvider toHCPObject() {
 		HCProvider HCProvider = new HCProvider();
 		HCProvider.setId(getId());
 		HCProvider.setName(getName());
-		HCProvider.setPrice(getPrice());
-		HCProvider.setDescription(getDescription());
+        HCProvider.setCity(getCity());
+        HCProvider.setState(getState());
+        HCProvider.setStreet(getStreet());
+        HCProvider.setRole(getRole());
+        HCProvider.setPhone(getPhone());
+        HCProvider.setPincode(getPincode());
+
 		return HCProvider;
 	}
 	

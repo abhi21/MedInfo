@@ -18,8 +18,11 @@ public class HCProviderTest {
 		HCProvider HCProvider = new HCProvider();
 		Map<String, ConstraintViolation<HCProvider>> violationsMap = validate(HCProvider);
 		assertTrue(violationsMap.get("name").getMessageTemplate().contains("NotEmpty"));
-		assertTrue(violationsMap.get("price").getMessageTemplate().contains("NotNull"));
-		assertTrue(violationsMap.get("description").getMessageTemplate().contains("NotNull"));
+		assertTrue(violationsMap.get("phone").getMessageTemplate().contains("NotNull"));
+		assertTrue(violationsMap.get("role").getMessageTemplate().contains("NotNull"));
+		assertTrue(violationsMap.get("state").getMessageTemplate().contains("NotNull"));
+		assertTrue(violationsMap.get("city").getMessageTemplate().contains("NotNull"));
+		assertTrue(violationsMap.get("pincode").getMessageTemplate().contains("NotNull"));
 	}
 	
 	private <T> Map<String, ConstraintViolation<T>>  validate(T hcp) {
