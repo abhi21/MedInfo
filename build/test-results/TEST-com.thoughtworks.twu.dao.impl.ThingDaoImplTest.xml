@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite errors="0" failures="0" hostname="localhost" name="com.thoughtworks.twu.dao.impl.ThingDaoImplTest" tests="1" time="2.349" timestamp="2013-03-03T10:16:08">
+  <properties />
+  <testcase classname="com.thoughtworks.twu.dao.impl.ThingDaoImplTest" name="all_fields_are_persisted" time="1.983" />
+  <system-out><![CDATA[INFO : org.springframework.jdbc.datasource.DriverManagerDataSource - Loaded JDBC driver: org.postgresql.Driver
+INFO : org.springframework.orm.hibernate3.LocalSessionFactoryBean - Building new Hibernate SessionFactory
+INFO : org.springframework.orm.hibernate3.HibernateTransactionManager - Using DataSource [org.springframework.jdbc.datasource.DriverManagerDataSource@4991b0eb] of Hibernate SessionFactory for HibernateTransactionManager
+INFO : org.springframework.test.context.transaction.TransactionalTestExecutionListener - Began transaction (1): transaction manager [org.springframework.orm.hibernate3.HibernateTransactionManager@4ce2fbd3]; rollback [true]
+Hibernate: select nextval ('hibernate_sequence')
+Hibernate: insert into things (description, name, price, id) values (?, ?, ?, ?)
+Hibernate: select thing0_.id as id0_, thing0_.description as descript2_0_, thing0_.name as name0_, thing0_.price as price0_ from things thing0_ order by thing0_.id
+INFO : org.springframework.test.context.transaction.TransactionalTestExecutionListener - Rolled back transaction after test execution for test context [[TestContext@4ae000a2 testClass = ThingDaoImplTest, testInstance = com.thoughtworks.twu.dao.impl.ThingDaoImplTest@3849b215, testMethod = all_fields_are_persisted@ThingDaoImplTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@6e4a9d91 testClass = ThingDaoImplTest, locations = '{classpath:test-persistance-config.xml}', classes = '{}', activeProfiles = '{}', contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader']]]
+]]></system-out>
+  <system-err><![CDATA[SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+]]></system-err>
+</testsuite>

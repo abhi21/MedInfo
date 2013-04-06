@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite errors="0" failures="0" hostname="localhost" name="com.thoughtworks.twu.model.ThingTest" tests="1" time="0.019" timestamp="2013-03-03T10:16:10">
+  <properties />
+  <testcase classname="com.thoughtworks.twu.model.ThingTest" name="assert_that_certain_fields_cant_be_null_or_blank" time="0.016" />
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

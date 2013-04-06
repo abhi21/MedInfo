@@ -1,0 +1,44 @@
+Spring MVC application skeleton with Hibernate persistence.
+Requirements:
+- java 6+
+- postgresql [database]
+- gradle [build tool]
+- junit4 [unit testing]
+- WebDriver [functional testing]
+- selenium [BDD cases]
+- log4j [logging]
+
+
+1. Edit the following files to reflect your environment:
+	src/main/webapp/WEB-INF/spring/persistence-config.xml
+	src/test/resources/test-persistance-config.xml
+
+2. Start postgres server,
+- create database testhellotwu :see test-persistance-config.xml, no need to create tables inside
+- create database hellotwu :see persistance-config.xml
+        - create table thing {CREATE TABLE things
+                              (
+                                id bigint NOT NULL,
+                                description character varying(255) NOT NULL,
+                                name character varying(255) NOT NULL,
+                                price numeric(19,2) NOT NULL,
+                                CONSTRAINT things_pkey PRIMARY KEY (id)
+                              )}
+]
+
+3. Run the unit tests:
+  	gradle clean build
+
+4. Run the Selenium tests (you will need to have Firefox installed):
+	gradle clean selenium
+
+5. Run application :
+    gradle jettyRun
+    [http://localhost:8080/spring-mvc-hibernate-skeleton/]
+
+Say HelloooTWU !
+
+
+Intellij:
+'gradle idea' sets up project files.
+
