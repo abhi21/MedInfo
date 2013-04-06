@@ -5,7 +5,9 @@
 
 <div class="container">
     <div class="hero-unit">
-        <p>Go to <a href="<c:url value='/hcproviders' />">Manage Health Care Providers</a> page.</p>
+        <p>Go to <a href="<c:url value='/hcproviders' />">Manage Health Care Providers</a> </p>
+        <p><a href="<c:url value='/smsflow' />">See Instructions to send SMS</a> </p>
+
     </div>
 
     <div class="pull-right">

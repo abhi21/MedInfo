@@ -51,5 +51,10 @@ public class HomeController {
     public String contact() {
         return "contact";
     }
+
+    @RequestMapping(value="/smsflow", method = RequestMethod.GET)
+    public String smsflow() {
+        return "smsflow";
+    }
 }
 
