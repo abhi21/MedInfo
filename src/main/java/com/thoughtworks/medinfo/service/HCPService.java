@@ -18,7 +18,9 @@ public interface HCPService {
 
     void saveAll(HCPGrid HCPGrid);
 
-    void updateWithAll(HCPGrid HCPGrid);
+    void viewAll(HCPGrid HCPGrid);
 
     List<HCProvider> findByPincode(String pincode);
+
+    void deleteAll(HCPGrid hcpGrid);
 }
