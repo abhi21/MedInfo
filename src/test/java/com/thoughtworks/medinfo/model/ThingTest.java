@@ -1,4 +1,4 @@
-package com.thoughtworks.twu.model;
+package com.thoughtworks.medinfo.model;
 
 import org.junit.Test;
 

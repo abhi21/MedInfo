@@ -1,6 +1,6 @@
-package com.thoughtworks.twu.dao.impl;
+package com.thoughtworks.medinfo.dao.impl;
 
-import com.thoughtworks.twu.model.*;
+import com.thoughtworks.medinfo.model.*;
 import junit.framework.Assert;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;

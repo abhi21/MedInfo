@@ -1,6 +1,6 @@
-package com.thoughtworks.twu.web;
+package com.thoughtworks.medinfo.web;
 
-import com.thoughtworks.twu.model.*;
+import com.thoughtworks.medinfo.model.*;
 
 import javax.validation.Valid;
 import java.util.ArrayList;

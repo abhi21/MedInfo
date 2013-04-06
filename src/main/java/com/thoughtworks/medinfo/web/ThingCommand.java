@@ -1,6 +1,6 @@
-package com.thoughtworks.twu.web;
+package com.thoughtworks.medinfo.web;
 
-import com.thoughtworks.twu.model.*;
+import com.thoughtworks.medinfo.model.*;
 
 public class ThingCommand extends Thing {
 

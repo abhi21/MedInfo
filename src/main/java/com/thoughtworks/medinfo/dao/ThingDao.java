@@ -1,6 +1,6 @@
-package com.thoughtworks.twu.dao;
+package com.thoughtworks.medinfo.dao;
 
-import com.thoughtworks.twu.model.*;
+import com.thoughtworks.medinfo.model.*;
 
 import java.util.List;
 

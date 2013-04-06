@@ -1,6 +1,6 @@
-package com.thoughtworks.twu.web;
+package com.thoughtworks.medinfo.web;
 
-import com.thoughtworks.twu.service.ThingService;
+import com.thoughtworks.medinfo.service.ThingService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

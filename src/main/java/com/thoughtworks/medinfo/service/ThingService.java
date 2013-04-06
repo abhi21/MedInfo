@@ -1,8 +1,8 @@
-package com.thoughtworks.twu.service;
+package com.thoughtworks.medinfo.service;
 
-import com.thoughtworks.twu.model.Thing;
-import com.thoughtworks.twu.web.ThingCommand;
-import com.thoughtworks.twu.web.ThingGrid;
+import com.thoughtworks.medinfo.model.Thing;
+import com.thoughtworks.medinfo.web.ThingCommand;
+import com.thoughtworks.medinfo.web.ThingGrid;
 
 public interface ThingService {
 	

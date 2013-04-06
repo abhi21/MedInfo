@@ -1,4 +1,4 @@
-package com.thoughtworks.twu.dao.impl;
+package com.thoughtworks.medinfo.dao.impl;
 
 import org.junit.runner.RunWith;
 import org.springframework.test.context.ContextConfiguration;

@@ -1,4 +1,4 @@
-package com.thoughtworks.twu.selenium;
+package com.thoughtworks.medinfo.selenium;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

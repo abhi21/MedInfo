@@ -1,7 +1,7 @@
-package com.thoughtworks.twu.dao.impl;
+package com.thoughtworks.medinfo.dao.impl;
 
-import com.thoughtworks.twu.dao.ThingDao;
-import com.thoughtworks.twu.model.Thing;
+import com.thoughtworks.medinfo.dao.ThingDao;
+import com.thoughtworks.medinfo.model.Thing;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;

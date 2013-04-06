@@ -1,10 +1,10 @@
-package com.thoughtworks.twu.service.impl;
+package com.thoughtworks.medinfo.service.impl;
 
-import com.thoughtworks.twu.dao.ThingDao;
-import com.thoughtworks.twu.model.Thing;
-import com.thoughtworks.twu.service.ThingService;
-import com.thoughtworks.twu.web.ThingCommand;
-import com.thoughtworks.twu.web.ThingGrid;
+import com.thoughtworks.medinfo.dao.ThingDao;
+import com.thoughtworks.medinfo.model.Thing;
+import com.thoughtworks.medinfo.service.ThingService;
+import com.thoughtworks.medinfo.web.ThingCommand;
+import com.thoughtworks.medinfo.web.ThingGrid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

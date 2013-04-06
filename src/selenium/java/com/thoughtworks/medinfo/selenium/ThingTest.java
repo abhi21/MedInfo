@@ -1,4 +1,4 @@
-package com.thoughtworks.twu.selenium;
+package com.thoughtworks.medinfo.selenium;
 
 import org.junit.AfterClass;
 import org.junit.Before;
