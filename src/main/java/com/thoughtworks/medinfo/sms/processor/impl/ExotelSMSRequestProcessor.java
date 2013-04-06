@@ -11,6 +11,7 @@ public class ExotelSMSRequestProcessor implements SMSRequestProcessor {
 
     @Override
     public String getPincode(HttpServletRequest httpServletRequest) {
-        return httpServletRequest.getParameter("Body");
+        String body = httpServletRequest.getParameter("Body");
+        return body.substring(body.indexOf(" ") + 1, body.length());
     }
 }

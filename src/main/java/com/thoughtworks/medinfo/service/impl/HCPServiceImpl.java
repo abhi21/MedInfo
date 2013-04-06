@@ -67,7 +67,7 @@ public class HCPServiceImpl implements HCPService {
         int length = hcProviders.size();
         if (length == 0 || hcProviders == null) return new ArrayList<HCProvider>();
         int limit = size > length ? length : size;
-        return hcProviders.subList(0, limit - 1);
+        return hcProviders.subList(0, limit);
     }
 
 }
