@@ -38,8 +38,10 @@
             </div>
             <div class="field">
                 <form:label for="role" path="role">Role:</form:label>
-                <form:errors path="role" cssClass="errors"/>
-                <form:input path="role"/>
+                <form:select path="role">
+                    <form:option value="" label="Select" />
+                    <form:options items="${hcpRoles}"/>
+                </form:select>
             </div>
             <div class="field">
                 <form:label for="street" path="street">Street:</form:label>

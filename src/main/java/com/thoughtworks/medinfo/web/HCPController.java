@@ -1,5 +1,6 @@
 package com.thoughtworks.medinfo.web;
 
+import com.thoughtworks.medinfo.model.HCPRole;
 import com.thoughtworks.medinfo.service.HCPService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -20,6 +21,8 @@ public class HCPController {
 	@Autowired
     HCPService hcpService;
 
+    HCPRole hcpRole;
+
 	@RequestMapping(method = RequestMethod.GET)
 	public void get(Model model, @ModelAttribute HCProviderCommand hcpCommand) {
 		model.addAttribute("hcpGrid", hcpService.findAll());
@@ -29,6 +32,7 @@ public class HCPController {
 	public String post(Model model, @Valid HCProviderCommand hcpCommand, BindingResult result) {
 		if (result.hasErrors()) {
 			model.addAttribute("hcpGrid", hcpService.findAll());
+			model.addAttribute("hcpRoles", hcpRole.getRoles());
 			return URL;
 		}
 		hcpService.save(hcpCommand);

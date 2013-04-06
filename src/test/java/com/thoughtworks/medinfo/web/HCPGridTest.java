@@ -1,6 +1,5 @@
 package com.thoughtworks.medinfo.web;
 
-import com.thoughtworks.medinfo.model.HCPRole;
 import com.thoughtworks.medinfo.model.HCProvider;
 import junit.framework.Assert;
 import org.junit.Test;
@@ -11,6 +10,8 @@ import javax.validation.Validator;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
+
+import static com.thoughtworks.medinfo.model.HCPRole.ANGANWADI_WORKER;
 
 public class HCPGridTest {
 	
@@ -25,7 +26,7 @@ public class HCPGridTest {
 		hcProvider.setState("state1");
 		hcProvider.setCity("city1");
 		hcProvider.setStreet("street1");
-		hcProvider.setRole(HCPRole.ANGANWADI_WORKER);
+		hcProvider.setRole(ANGANWADI_WORKER);
 		hcProvider.setPincode("560012");
         hcproviders.add(hcProvider);
 
@@ -35,7 +36,7 @@ public class HCPGridTest {
         hcProvider2.setState("state2");
         hcProvider2.setCity("city2");
         hcProvider2.setStreet("street2");
-        hcProvider2.setRole(HCPRole.ANGANWADI_WORKER);
+        hcProvider2.setRole(ANGANWADI_WORKER);
         hcProvider2.setPincode("560011");
         hcproviders.add(hcProvider2);
 
