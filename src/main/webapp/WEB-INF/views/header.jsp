@@ -10,7 +10,6 @@
     <script type="text/javascript" src="<c:url value='/scripts/lib/prototype.js' />"></script>
     <script type="text/javascript" src="<c:url value='/scripts/lib/RowSelector.js' />"></script>
     <script type="text/javascript" src="<c:url value='/scripts/hcproviders.js' />"></script>
-    <script type="text/javascript" src="<c:url value='/scripts/jquery.js' />"></script>
 </head>
 <body>
 <div class="navbar navbar-inverse navbar-fixed-top">

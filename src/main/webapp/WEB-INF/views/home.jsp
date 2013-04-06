@@ -22,7 +22,6 @@
                     <c:out value="No Result Found"/>
                 </div>
             </c:when>
-
         </c:choose>
 
 

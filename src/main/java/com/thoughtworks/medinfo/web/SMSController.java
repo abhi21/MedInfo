@@ -49,9 +49,11 @@ public class SMSController {
             String result = "";
             for (int i = 0; i < hcProviders.size(); i++) {
                 HCProvider hcProvider = hcProviders.get(i);
-                result += i + 1 + ".name:" + hcProvider.getName() + "(" + hcProvider.getRole() + ") " +
+                result += (i + 1) + ".name:" + hcProvider.getName() + "(" + hcProvider.getRole() + ") " +
                         "ph:" + hcProvider.getPhone() + " " +
-                        "address:" + hcProvider.getStreet() + ", " + hcProvider.getCity() + " |  ";
+                        "address:" + hcProvider.getStreet() + ", " + hcProvider.getCity();
+                if (i < hcProviders.size() - 1) result += " |  ";
+
             }
             return result;
         }

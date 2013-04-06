@@ -1,4 +1,8 @@
-jQuery(document).ready(function () {
+document.observe('dom:loaded', function () {
+    RowSelector.bindEvents();
+});
+
+/*jQuery(document).ready(function () {
 
     $("#HCProviderCommand").validate({
         rules: {
@@ -42,9 +46,5 @@ jQuery(document).ready(function () {
             }
         }
     });
-});
-
-document.observe('dom:loaded', function () {
-    RowSelector.bindEvents();
-});
+});*/
 
