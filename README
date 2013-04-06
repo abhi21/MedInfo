@@ -15,16 +15,17 @@ Requirements:
 
 2. Start postgres server,
 - create database testmedinfo :see test-persistance-config.xml, no need to create tables inside
-- create database medinfo :see persistance-config.xml
-        - create table HCProvider {CREATE TABLE hcproviders
-                              (
-                                id bigint NOT NULL,
-                                description character varying(255) NOT NULL,
-                                name character varying(255) NOT NULL,
-                                price numeric(19,2) NOT NULL,
+CREATE TABLE HCProviders(
+                                id bigint NOT NULL UNIQUE,
+                                name varchar(50) NOT NULL,
+                                phone varchar(30) NOT NULL,
+                                role varchar(30) NOT NULL,
+                                pincode varchar(30) NOT NULL,
+                                state varchar(20) NOT NULL,
+                                city varchar(20) NOT NULL,
+                                street varchar(50),
                                 CONSTRAINT hcproviders_pkey PRIMARY KEY (id)
-                              )}
-]
+                              )
 
 3. Run the unit tests:
   	gradle clean build
