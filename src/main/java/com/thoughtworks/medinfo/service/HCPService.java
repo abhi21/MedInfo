@@ -17,5 +17,6 @@ public interface HCPService {
 	void saveAll(HCPGrid HCPGrid);
 
 	void viewAll(HCPGrid HCPGrid);
-	
+
+    void deleteAll(HCPGrid hcpGrid);
 }

@@ -45,4 +45,14 @@ public class HCPController {
         return "redirect:" + URL;
     }
 
+    @RequestMapping(method = RequestMethod.POST, params="delete=Delete all enabled items")
+    public String deleteItem(Model model, @Valid HCPGrid hcpGrid, BindingResult result) {
+        if (result.hasErrors()) {
+            hcpService.viewAll(hcpGrid);
+            return URL;
+        }
+        hcpService.deleteAll(hcpGrid);
+        return "redirect:" + URL;
+    }
+
 }

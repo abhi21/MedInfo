@@ -81,6 +81,7 @@
 			</table>
 			<p>
                 <input type="submit" value="Update all enabled items" name="update">
+                <input type="submit" value="Delete all enabled items" name="delete">
 			</p>
 		</form:form>
 	</body>

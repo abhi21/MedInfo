@@ -47,4 +47,10 @@ public class HCPServiceImpl implements HCPService {
 		allHCPs.getHcpMap().putAll(HCPGrid.getHcpMap());
 		HCPGrid.setHcpMap(allHCPs.getHcpMap());
 	}
+
+    @Transactional
+    public void deleteAll(HCPGrid hcpGrid) {
+        for (HCProvider hcp : hcpGrid.getHCP())
+            delete(hcp);
+    }
 }
