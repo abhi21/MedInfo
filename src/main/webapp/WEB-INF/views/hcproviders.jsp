@@ -12,12 +12,12 @@
         <fieldset class="fieldcontainer">
             <legend>Add New Health Care Provider</legend>
             <div class="block">
-                <div class="field span5">
+                <div class="field span3">
                     <form:label for="name" path="name">Name:</form:label>
                     <form:errors path="name" cssClass="errors"/>
                     <form:input path="name"/>
                 </div>
-                <div class="field span5">
+                <div class="field span3">
                     <form:label for="phone" path="phone">Phone:</form:label>
                     <form:errors path="phone" cssClass="errors"/>
                     <form:input path="phone"/>
@@ -61,7 +61,7 @@
 
     <legend>All Current Registered Health Care Providers</legend>
     <form:form action="" method="post" modelAttribute="hcpGrid">
-        <table>
+        <table class="table table-striped">
             <thead>
             <tr>
                 <th><input type="checkbox" class="toggleAll"/></th>

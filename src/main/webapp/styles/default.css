@@ -11,10 +11,10 @@ div.legacy-browser {
 	text-align: center;
 }
 
-/*table {*/
-	/*border-collapse: collapse;*/
-	/*width: 100%;*/
-/*}*/
+table {
+	border-collapse: collapse;
+	width: 100%;
+}
 
 th {
 	border: 1px solid #ddd;
@@ -39,6 +39,7 @@ td input {
 td input[disabled] {
 	color: #555;
 	background: transparent;
+    border: 0;
 }
 
 td input[type="text"] {
