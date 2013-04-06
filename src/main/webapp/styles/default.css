@@ -11,10 +11,10 @@ div.legacy-browser {
 	text-align: center;
 }
 
-table {
-	border-collapse: collapse;
-	width: 100%;
-}
+/*table {*/
+	/*border-collapse: collapse;*/
+	/*width: 100%;*/
+/*}*/
 
 th {
 	border: 1px solid #ddd;
@@ -29,7 +29,7 @@ td {
 
 td>span.errors {
 	display: block;
-	font-size: 75%;
+	font-size: 100%;
 }
 
 td input {
@@ -72,6 +72,10 @@ input[type="submit"] {
 
 input.disablable-hidden {
 	display: none;
+}
+
+input[type="hidden"] {
+    display: none;
 }
 
 .errors {

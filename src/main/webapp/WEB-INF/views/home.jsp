@@ -5,10 +5,11 @@
 
 <div class="container">
     <div class="hero-unit">
-        <p>Go to <a href="<c:url value='/hcproviders' />">Health Care Providers</a> page.</p>
+        <p>Go to <a href="<c:url value='/hcproviders' />">Manage Health Care Providers</a> page.</p>
     </div>
 
-    <table id="homepage">
+    <table id="homepage" class="table table-striped">
+        <legend>Health Care Providers List</legend>
         <thead>
         <tr>
             <th>Name</th>
