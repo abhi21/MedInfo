@@ -16,5 +16,24 @@
 		<h1><div class="heading">Welcome to MedInfo !</div></h1>
 		<h2>This is your Spring MVC skeleton with Gradle build, Hibernate persistance and Selenium functional testing</h2>
 		<p>Go to <a href="<c:url value='/hcproviders' />">Health Care Providers</a> page.</p>
+
+        <table id="homepage">
+            <thead>
+            <tr>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Description</th>
+            </tr>
+            </thead>
+            <tbody>
+            <c:forEach var="hcpMap" items="${hcpGrid.hcpMap}" varStatus="row">
+                <tr>
+                    <td><c:out value="${hcpMap.value.name}"/></td>
+                    <td><c:out value="${hcpMap.value.price}"/></td>
+                    <td><c:out value="${hcpMap.value.description}"/></td>
+                </tr>
+            </c:forEach>
+            </tbody>
+        </table>
 	</body>
 </html>
