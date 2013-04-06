@@ -42,7 +42,7 @@ public class HCPServiceImpl implements HCPService {
 	}
 	
 	@Transactional(readOnly = true)
-	public void updateWithAll(HCPGrid HCPGrid) {
+	public void viewAll(HCPGrid HCPGrid) {
 		HCPGrid allHCPs = findAll();
 		allHCPs.getHcpMap().putAll(HCPGrid.getHcpMap());
 		HCPGrid.setHcpMap(allHCPs.getHcpMap());

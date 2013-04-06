@@ -48,7 +48,7 @@
 
 			</fieldset>
 		</form:form>
-		<form:form action="" method="put" modelAttribute="hcpGrid">
+		<form:form action="" method="post" modelAttribute="hcpGrid">
 			<table>
 				<thead><tr><th><input type="checkbox" class="toggleAll" /></th><th>Name</th><th>Price</th><th>Description</th></tr></thead>
 				<tbody>
@@ -80,7 +80,7 @@
 				</tbody>
 			</table>
 			<p>
-				<input type="submit" value="Update all enabled HCProviders">
+                <input type="submit" value="Update all enabled items" name="update">
 			</p>
 		</form:form>
 	</body>

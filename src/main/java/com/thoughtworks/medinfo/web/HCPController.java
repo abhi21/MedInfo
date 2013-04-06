@@ -34,15 +34,15 @@ public class HCPController {
 		hcpService.save(hcpCommand);
 		return "redirect:" + URL;
 	}
-	
-	@RequestMapping(method = RequestMethod.POST, params="_method=put")
-	public String put(Model model, @Valid HCPGrid hcpGrid, BindingResult result) {
-		if (result.hasErrors()) {
-			hcpService.updateWithAll(hcpGrid);
-			return URL;
-		}
-		hcpService.saveAll(hcpGrid);
-		return "redirect:" + URL;
-	}
-	
+
+    @RequestMapping(method = RequestMethod.POST, params="update=Update all enabled items")
+    public String updateItem(Model model, @Valid HCPGrid hcpGrid, BindingResult result) {
+        if (result.hasErrors()) {
+            hcpService.viewAll(hcpGrid);
+            return URL;
+        }
+        hcpService.saveAll(hcpGrid);
+        return "redirect:" + URL;
+    }
+
 }
