@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 @Controller
+@RequestMapping("/sms")
 public class SMSController {
 
     private SMSRequestProcessor smsRequestProcessor;

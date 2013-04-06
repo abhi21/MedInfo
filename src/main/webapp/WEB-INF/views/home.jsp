@@ -21,16 +21,24 @@
             <thead>
             <tr>
                 <th>Name</th>
-                <th>Price</th>
-                <th>Description</th>
+                <th>Phone</th>
+                <th>Role</th>
+                <th>Street</th>
+                <th>City</th>
+                <th>State</th>
+                <th>Pincode</th>
             </tr>
             </thead>
             <tbody>
             <c:forEach var="hcpMap" items="${hcpGrid.hcpMap}" varStatus="row">
                 <tr>
                     <td><c:out value="${hcpMap.value.name}"/></td>
-                    <td><c:out value="${hcpMap.value.price}"/></td>
-                    <td><c:out value="${hcpMap.value.description}"/></td>
+                    <td><c:out value="${hcpMap.value.phone}"/></td>
+                    <td><c:out value="${hcpMap.value.role}"/></td>
+                    <td><c:out value="${hcpMap.value.street}"/></td>
+                    <td><c:out value="${hcpMap.value.city}"/></td>
+                    <td><c:out value="${hcpMap.value.state}"/></td>
+                    <td><c:out value="${hcpMap.value.pincode}"/></td>
                 </tr>
             </c:forEach>
             </tbody>
