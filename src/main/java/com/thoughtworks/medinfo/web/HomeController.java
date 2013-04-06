@@ -37,7 +37,7 @@ public class HomeController {
         httpServletResponse.setContentType("text/html");
         List<HCProvider> hcProviders = hcpService.findByPincode(pincode, NO_LIMIT);
         model.addAttribute("hcpGrid", new HCPGrid(hcProviders));
-        model.addAttribute("searchStat", "Number of Records for " + pincode + ": ");
+        model.addAttribute("searchStat", "Number of Records for " + pincode);
         model.addAttribute("searchCount", hcProviders.size());
         return "home";
     }
