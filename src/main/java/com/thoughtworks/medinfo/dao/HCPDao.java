@@ -11,5 +11,5 @@ public interface HCPDao {
 	void delete(HCProvider HCProvider);
 	List<HCProvider> findAll();
 
-    List<HCProvider> findByPincode(String msisdn);
+    List<HCProvider> findByPincode(String pincode);
 }
