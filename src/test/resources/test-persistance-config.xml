@@ -18,7 +18,7 @@
 		<property name="driverClassName" value="org.postgresql.Driver" />
 		<property name="url" value="jdbc:postgresql://localhost:5432/medinfo" />
 		<property name="username" value="postgres" />
-		<property name="password" value="p@ssw0rd" />
+		<property name="password" value="password" />
 	</bean>
 
 	<!-- Hibernate -->
@@ -46,5 +46,7 @@
 	</bean>
 	
 	<bean id="namingStrategy" class="org.hibernate.cfg.ImprovedNamingStrategy" />
+    <bean id="exotelSMSRequestProcessor" class="com.thoughtworks.medinfo.sms.processor.impl.ExotelSMSRequestProcessor"/>
+
 
 </beans>
