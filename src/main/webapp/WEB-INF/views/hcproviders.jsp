@@ -104,12 +104,12 @@
                         <form:input disabled="${!hcpEntry.value.selected}" path="hcpMap[${hcpEntry.key}].street"/>
                     </td>
                     <td>
-                        <form:errors path="hcpMap[${hcpEntry.key}].state" cssClass="errors"/>
-                        <form:input disabled="${!hcpEntry.value.selected}" path="hcpMap[${hcpEntry.key}].state"/>
-                    </td>
-                    <td>
                         <form:errors path="hcpMap[${hcpEntry.key}].city" cssClass="errors"/>
                         <form:input disabled="${!hcpEntry.value.selected}" path="hcpMap[${hcpEntry.key}].city"/>
+                    </td>
+                    <td>
+                        <form:errors path="hcpMap[${hcpEntry.key}].state" cssClass="errors"/>
+                        <form:input disabled="${!hcpEntry.value.selected}" path="hcpMap[${hcpEntry.key}].state"/>
                     </td>
                     <td>
                         <form:errors path="hcpMap[${hcpEntry.key}].pincode" cssClass="errors"/>
