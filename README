@@ -7,6 +7,7 @@ Requirements:
 - WebDriver [functional testing]
 - selenium [BDD cases]
 - log4j [logging]
+- bootstrap
 
 
 1. Edit the following files to reflect your environment:

@@ -100,8 +100,8 @@
                         <form:input disabled="${!hcpEntry.value.selected}" path="hcpMap[${hcpEntry.key}].role"/>
                     </td>
                     <td>
-                        <form:errors path="hcpMap[${hcpEntry.key}].pincode" cssClass="errors"/>
-                        <form:input disabled="${!hcpEntry.value.selected}" path="hcpMap[${hcpEntry.key}].pincode"/>
+                        <form:errors path="hcpMap[${hcpEntry.key}].street" cssClass="errors"/>
+                        <form:input disabled="${!hcpEntry.value.selected}" path="hcpMap[${hcpEntry.key}].street"/>
                     </td>
                     <td>
                         <form:errors path="hcpMap[${hcpEntry.key}].state" cssClass="errors"/>
@@ -112,16 +112,16 @@
                         <form:input disabled="${!hcpEntry.value.selected}" path="hcpMap[${hcpEntry.key}].city"/>
                     </td>
                     <td>
-                        <form:errors path="hcpMap[${hcpEntry.key}].street" cssClass="errors"/>
-                        <form:input disabled="${!hcpEntry.value.selected}" path="hcpMap[${hcpEntry.key}].street"/>
+                        <form:errors path="hcpMap[${hcpEntry.key}].pincode" cssClass="errors"/>
+                        <form:input disabled="${!hcpEntry.value.selected}" path="hcpMap[${hcpEntry.key}].pincode"/>
                     </td>
                 </tr>
             </c:forEach>
             </tbody>
         </table>
         <p>
-            <input type="submit" value="Update all enabled items" name="update">
-            <input type="submit" value="Delete all enabled items" name="delete">
+            <input type="submit" class="sub-btn" disabled="${!hcpEntry.value.selected}" value="Update all enabled items" name="update">
+            <input type="submit" class="sub-btn" disabled="${!hcpEntry.value.selected}" value="Delete all enabled items" name="delete">
         </p>
     </form:form>
 </div>
